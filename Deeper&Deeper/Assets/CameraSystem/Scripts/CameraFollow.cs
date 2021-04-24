@@ -23,12 +23,12 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-           if (Visiontarget == null)
+        if (Visiontarget == null)
         {
             Visiontarget = target;
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if(target != null) {
             Vector3 targetPosition = target.TransformPoint(new Vector3(offsetX, offsetY, offsetZ));
@@ -44,8 +44,9 @@ public class CameraFollow : MonoBehaviour
                 this.transform.rotation = Quaternion.Slerp(this.transform.rotation, desiredRotation, smoothing * 10 * Time.deltaTime);
 
             }
+            return;
         }
-        else Debug.Log("You didnt assign a target in CameraFollow, you dumdum!");
+        Debug.Log("You didnt assign a target in CameraFollow, you dumdum!");
 
     }
 }
