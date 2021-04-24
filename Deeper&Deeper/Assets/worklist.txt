@@ -1,0 +1,17 @@
+fix the aim first
+
+create an option to switch the transform target (possibly every setting on there.)
+
+Create a few background elements to paste over blocks (simple)
+
+create the paralax
+
+HP
+
+Enemies
+
+Bosses (the plant one first cuz it's easy)
+
+plants that sway in the wind upon walking over it.
+
+particles
