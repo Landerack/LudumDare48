@@ -49,4 +49,15 @@ public class CameraFollow : MonoBehaviour
         Debug.Log("You didnt assign a target in CameraFollow, you dumdum!");
 
     }
+
+
+
+    public void SetCamera(Transform newtarget, float x, float y, float z, bool track)
+    {
+        target = newtarget;
+        offsetX = x;
+        offsetY = y;
+        offsetZ = z;
+        TrackPlayer = track;
+    }
 }

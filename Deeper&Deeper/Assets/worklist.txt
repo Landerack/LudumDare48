@@ -1,4 +1,6 @@
-fix the aim first
+fix the aim first(done)
+
+create an attack then have it do the dash.
 
 create an option to switch the transform target (possibly every setting on there.)
 
@@ -6,7 +8,7 @@ Create a few background elements to paste over blocks (simple)
 
 create the paralax
 
-HP
+HP (add invulnerability time for the player during dash or after a hit.)
 
 Enemies
 
