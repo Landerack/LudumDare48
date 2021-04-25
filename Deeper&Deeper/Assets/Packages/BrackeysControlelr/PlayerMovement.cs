@@ -13,12 +13,15 @@ public class PlayerMovement : MonoBehaviour {
 	float horizontalMove = 0f;
 	bool jump = false;
 
+	[SerializeField] private Animator animator;
 	
 	// Update is called once per frame
 	void Update () {
 
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+		animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
 		Jump();
 
