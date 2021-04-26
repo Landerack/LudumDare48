@@ -9,4 +9,8 @@ public class SO_Stats : ScriptableObject
     public float movementspeed;
 
     public bool canFly;
+
+    public float damage;
+
+    public bool enemy;
 }

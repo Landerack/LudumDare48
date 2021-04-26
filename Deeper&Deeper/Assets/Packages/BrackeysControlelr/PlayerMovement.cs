@@ -40,12 +40,10 @@ public class PlayerMovement : MonoBehaviour {
 			jump = true;
 		}
 
-		if((trigger > 0)&&(cooldowntime == false))
+		if((trigger < 0)&&(cooldowntime == false))
         {
 			Debug.Log("Right trigger pressed");
-			combatScript.startDashTime = true;
-			cooldowntime = true;
-			StartCoroutine(Cooldown());
+			Attack();
         }
 
 
@@ -56,7 +54,15 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
+    private void Attack()
+    {
 
+        if (true)
+        {
+			//attack landed.
+			Dash();
+        }
+    }
 
     void FixedUpdate ()
 	{
@@ -64,6 +70,16 @@ public class PlayerMovement : MonoBehaviour {
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 		jump = false;
 	}
+
+
+
+	private void Dash()
+    {
+		combatScript.startDashTime = true;
+		cooldowntime = true;
+		StartCoroutine(Cooldown());
+	}
+
 
 
 	IEnumerator Cooldown()

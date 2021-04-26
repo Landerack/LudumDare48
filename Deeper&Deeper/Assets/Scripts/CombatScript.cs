@@ -29,11 +29,11 @@ public class CombatScript : MonoBehaviour
     {
         //Aim
         
-        Dash();
+        Attack();
         Aim();
     }
 
-    private void Dash()
+    private void Attack()
     {
         float HorizontalAxis = Input.GetAxis("HorizontalRightStick");
         float VerticalAxis = Input.GetAxis("VerticalRightStick");
@@ -43,10 +43,10 @@ public class CombatScript : MonoBehaviour
         //Dash
         if (startDashTime == true)
         {
-            if(rb.velocity.magnitude < 700f)
+            if(rb.velocity.magnitude < 700f)//
             {
-                rb.AddForce(twistPoint.up * DashSpeed * 10);
-                startDashTime = false;
+                //check if we hit after attack.
+                Dash();
             }
             
         }
@@ -81,5 +81,11 @@ public class CombatScript : MonoBehaviour
         {
             twistPoint.transform.localEulerAngles = new Vector3(0f, 0f, Mathf.Atan2(HorizontalAxis, VerticalAxis) * -180 / Mathf.PI + 90f);
         }
+    }
+
+    private void Dash()
+    {
+        rb.AddForce(twistPoint.up * DashSpeed * 10);
+        startDashTime = false;
     }
 }
